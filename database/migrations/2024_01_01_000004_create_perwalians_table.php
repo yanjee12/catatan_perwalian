@@ -15,15 +15,9 @@ return new class extends Migration
             $table->dateTime('tanggal_perwalian')->nullable();
             $table->string('topik')->nullable();
             $table->enum('status', ['diajukan', 'berlangsung', 'disetujui', 'ditolak'])->default('diajukan');
-            $table->text('catatan_dosen')->nullable();
-            $table->timestamps();
+            $table->text('catatan_dosen')->nullable(); // Catatan balasan dari Dosen
             $table->text('catatan')->nullable();
-
-            // KOLOM PENTING UNTUK PROSES DOSEN
-             $table->enum('status', ['diajukan', 'berlangsung', 'disetujui', 'ditolak'])->default('diajukan');
-             $table->text('catatan_dosen')->nullable(); // Catatan balas dari Dosen
-    
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 
